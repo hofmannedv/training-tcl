@@ -172,7 +172,26 @@ variable's value contains spaces.
 
 == Entwicklungsumgebung und Ausführung ==
 
-ToDo
+=== wish ===
+
+* wish: Abkürzung für Windowing Shell
+* besteht aus Kommandozeilenfenster ('Konsole') und dem graphischen
+Darstellungsfenster ('Display')
+* Aufruf im Terminal:
+
+----
+$ wish
+%
+----
+
+* "Hallo, Welt"-Programm in der +wish+
+
+----
+% message .msg -text "Hallo, Welt!"
+% pack .msg
+----
+
+image::helloworld-wish.png[id="fig.helloworld-wish"]
 
 == Programmaufbau und Struktur ==
 
