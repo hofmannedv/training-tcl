@@ -172,9 +172,9 @@ variable's value contains spaces.
 
 == Entwicklungsumgebung und Ausführung ==
 
-=== wish ===
+=== Windowing Shell (+wish+) ===
 
-* wish: Abkürzung für Windowing Shell
+* Bestandteil des Tcl/Tk-Pakets
 * besteht aus Kommandozeilenfenster ('Konsole') und dem graphischen
 Darstellungsfenster ('Display')
 * Aufruf im Terminal:
@@ -193,9 +193,37 @@ $ wish
 
 image::helloworld-wish.png[id="fig.helloworld-wish"]
 
+=== Bearbeitung über einen Texteditor ===
+
+* speichern als Textdatei
+* Name und Erweiterung sind vollkommen unerheblich
+
+----
+#! /usr/bin/wish
+
+# define string variable with content
+set message "Hello, World!"
+
+# output message on UNIX channel stdout
+puts stdout $message
+
+----
+
+* setzen des Flags "ausführbar":
+
+----
+chmod +x hello-world.tcl
+----
+
+* Ausführung über die Shell:
+
+----
+./hello-world.tcl
+----
+
 == Programmaufbau und Struktur ==
 
-ToDo
+TBD
 
 == Weiterführende Dokumente ==
 
