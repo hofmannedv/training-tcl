@@ -170,8 +170,22 @@ boundaries of a command. For example, during variable substitution the
 entire value of the variable becomes part of a single word, even if the
 variable's value contains spaces.
 
+== Entwicklungsumgebung und Ausführung ==
+
+ToDo
+
+== Programmaufbau und Struktur ==
+
+ToDo
+
 == Weiterführende Dokumente ==
 
-* Dokumentation zu Tcl
+* John Ousterhout: Tcl und Tk. Entwicklung grafischer
+Benutzerschnittstellen für das X Window System, 1995, Addison-Wesley,
+ISBN 3-89319-793-1
+* Brent Welch: Praktisches Programmieren in Tcl und Tk, 1996, Prentice
+Hall, München, ISBN 3-8272-9529-7
+* Ulrich Cuber: Linux Scripting, 2001, Franzis' Verlag GmbH, Poing, ISBN
+3-7723-7124-8
 * Das Wikibook to Tcl, http://en.wikibooks.org/wiki/Tcl_Programming
 * Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, https://github.com/hofmannedv/training-tcl
