@@ -9,14 +9,15 @@
 # -----------------------------------------------------------
 
 # define a list of cities
-set cities "Lyon Metz Nancy Belfort"
+set cities "Lyon Metz Nancy Belfort Pontarlier"
+puts $cities
 
 # add another place (at the end)
 lappend cities "Dijon"
 puts $cities
 
 # replace elements 2 and 3 by new values
-set cities [ lreplace $cities 1 2 "Bordeaux" "Nice" ]
+set cities [ lreplace $cities 1 2 "Avignon" "Cannes" ]
 puts $cities
 
 # replace element 2 to 4 by a single value
@@ -27,7 +28,10 @@ puts $cities
 set cities [ lreplace $cities 2 2 ]
 puts $cities
 
-# remove item by value
+# remove item by value: Lyon
+set position [ lsearch $cities Lyon ]
+set cities [ lreplace $cities $position $position ]
+puts $cities
 
 # define a second list of cities
 set cities2 "Toulon Moulins Colmar"
