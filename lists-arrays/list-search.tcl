@@ -13,8 +13,14 @@ set cities "Potsdam Berlin Hamburg Frankfurt"
 puts "unsorted list: $cities"
 
 # search item in list
-set place Hamburg
+set place Hannover
 set position [ lsearch $cities $place ]
 
-# output position
-puts [ format "%s is at position %d" $place $position ]
+# validate search result: $position > -1
+if {$position > -1} {
+	# output position
+	puts [ format "%s is at position %d" $place $position ]
+} else {
+	# output error message: element not in list
+	puts [ format "%s is not in the list" $place ]
+}
