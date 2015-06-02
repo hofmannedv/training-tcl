@@ -29,3 +29,12 @@ set cities2 "Toulon Moulins Colmar"
 # combine these lists
 set places [ concat $cities $cities2 ]
 puts $places
+
+# selecting the second list item
+puts [ lindex $places 1 ]
+
+# selecting from the second to the fourth list item
+puts [ lrange $places 1 3 ]
+
+# count the number of items in that list
+puts [ llength $places ]
