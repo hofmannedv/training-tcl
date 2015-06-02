@@ -9,11 +9,20 @@
 # -----------------------------------------------------------
 
 # define string
-set value Hamburg
+set place Hamburg
 
-# define pattern
-set pattern H*
+# define pattern with shell-like asterisk
+set pattern1 H*
 
-if {[ string match $pattern $value ]} {
-	puts "pattern ${pattern} found in ${value}"
+if {[ string match $pattern1 $place ]} {
+	puts "pattern ${pattern1} found in ${place}"
 }
+
+# define pattern with a specific length
+set pattern2 ??
+
+if {[ string match $pattern2 XY ]} {
+	puts "pattern ${pattern2} matches XY"
+}
+
+
