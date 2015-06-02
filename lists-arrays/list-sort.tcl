@@ -9,12 +9,19 @@
 # -----------------------------------------------------------
 
 # define a list of cities
-set cities "Lyon Metz Nancy Belfort Pontarlier"
-puts $cities
+set cities "Potsdam Berlin Hamburg Frankfurt"
+puts "unsorted: $cities"
 
 # sort ascending, alphabetically (default setting)
 # similar to: lsort -ascii -increasing
-puts [ lsort $cities ]
+puts "sorted (increasing): [ lsort $cities ]"
 
 # sort decreasing
-puts [ lsort -ascii -decreasing $cities ]
+puts "sorted (decreasing): [ lsort -ascii -decreasing $cities ]"
+
+# define integer list
+set postcode "14467 10245 20445 60345"
+
+# sort by integer, decreasing
+puts "sorted (decreasing): [ lsort -integer -decreasing $postcode ]"
+
