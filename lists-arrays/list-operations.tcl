@@ -21,7 +21,7 @@ set cities [ lreplace $cities 1 2 "Avignon" "Cannes" ]
 puts $cities
 
 # replace element 2 to 4 by a single value
-set cities [ lreplace $cities 1 3 "Valence" ]
+set cities [ lreplace $cities 1 3 "Nantes" ]
 puts $cities
 
 # remove item by index -- replace 3rd item by nothing
@@ -34,7 +34,19 @@ set cities [ lreplace $cities $position $position ]
 puts $cities
 
 # define a second list of cities
-set cities2 "Toulon Moulins Colmar"
+set cities2 "Bordeaux Colmar"
+
+# insert item at the beginning
+set cities2 [ linsert $cities2 0 "Strasbourg" ]
+puts $cities2
+
+# insert item at position 1
+set cities2 [ linsert $cities2 1 "Mulhouse" ]
+puts $cities2
+
+# insert item at the end (index greater list length
+set cities2 [ linsert $cities2 1356 "Toulouse" ]
+puts $cities2
 
 # combine these lists
 set places [ concat $cities $cities2 ]
