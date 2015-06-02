@@ -1,7 +1,7 @@
 #! /usr/bin/wish
 
 # -----------------------------------------------------------
-# transfor a string into a list
+# transform a string into a list
 #o
 # (C) 2015 Frank Hofmann, Berlin, Germany
 # Released under GNU Public License (GPL)
