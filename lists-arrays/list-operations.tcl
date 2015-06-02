@@ -23,6 +23,12 @@ puts $cities
 set cities [ lreplace $cities 1 3 "Valence" ]
 puts $cities
 
+# remove item by index -- replace 3rd item by nothing
+set cities [ lreplace $cities 2 2 ]
+puts $cities
+
+# remove item by value
+
 # define a second list of cities
 set cities2 "Toulon Moulins Colmar"
 
