@@ -1427,6 +1427,25 @@ puts $adresse(strasse)
 puts $adresse(ort)
 puts $adresse(plz)</tt></pre>
 </div></div>
+<div class="paragraph"><p>Arrayfunktionen (Auswahl):</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>get</tt>: Rückgabe einer Liste, die zwischen dem Index und dem Feldwert
+wechselt
+</p>
+</li>
+<li>
+<p>
+<tt>names</tt>: Rückgabe aller Indizes, die in dem Array definiert sind
+</p>
+</li>
+<li>
+<p>
+<tt>size</tt>: die Anzahl Elemente in dem Array
+</p>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -1439,16 +1458,57 @@ puts $adresse(plz)</tt></pre>
 <tt>for</tt>-Schleife
 </p>
 </li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt># define a for loop from 1 to 10 step 3
+for {set i 1} {$i &lt;= 10} {incr i 3} {
+        puts "value: $i"
+}</tt></pre>
+</div></div>
+<div class="ulist"><ul>
 <li>
 <p>
 <tt>foreach</tt>-Schleife
 </p>
 </li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt># Definition
+set address(name) "Willi Weber"
+set address(road) "Elbchaussee 4"
+set address(place) "Hamburg Altona"
+set address(zip) 22765
+
+# Auswahl Feld für Feld
+foreach item [array names address ] { \
+        puts "${item}: $address($item)" \
+}</tt></pre>
+</div></div>
+<div class="ulist"><ul>
 <li>
 <p>
 <tt>while</tt>-Schleife
 </p>
 </li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>set i 0
+
+while {$i &lt; 10} {
+
+        # output odd values, only
+        if {$i % 2 == 1} {
+                puts $i
+        }
+
+        # increase counter
+        incr i
+}</tt></pre>
+</div></div>
+<div class="ulist"><ul>
 <li>
 <p>
 Verwendung von <tt>break</tt> und <tt>continue</tt>
@@ -1510,7 +1570,7 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br />
-Letzte Änderung 2015-06-03 18:43:53 CEST
+Letzte Änderung 2015-06-03 22:41:42 CEST
 </div>
 </div>
 </body>
