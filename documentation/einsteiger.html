@@ -1356,7 +1356,115 @@ Zeichenketten stehen in doppelten Anführungszeichen
 </div>
 </div>
 <div class="sect1">
-<h2 id="_weiterführende_dokumente">5. Weiterführende Dokumente</h2>
+<h2 id="_listen_und_arrays">5. Listen und Arrays</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_liste">5.1. Liste</h3>
+<div class="paragraph"><p>Menge von Werten beliebigen Inhalts und Typs, Indexierung beginnt mit 0</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>set cities "Lyon Metz Nancy Belfort Pontarlier"</tt></pre>
+</div></div>
+<div class="paragraph"><p>Listenfunktionen (Auswahl):</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>lappend</tt>: ein Element ans Ende der Liste anfügen
+</p>
+</li>
+<li>
+<p>
+<tt>lreplace</tt>: ein oder mehrere Listenelemente ersetzen
+</p>
+</li>
+<li>
+<p>
+<tt>lsearch</tt>: innerhalb der Liste suchen
+</p>
+</li>
+<li>
+<p>
+<tt>linsert</tt>: ein Element in der Liste einfügen
+</p>
+</li>
+<li>
+<p>
+<tt>concat</tt>: zwei oder mehrere Listen verketten
+</p>
+</li>
+<li>
+<p>
+<tt>lindex</tt>: ein Element anhand dessen Index auswählen
+</p>
+</li>
+<li>
+<p>
+<tt>lrange</tt>: einen Bereich der Liste auswählen
+</p>
+</li>
+<li>
+<p>
+<tt>llength</tt>: die Anzahl Elemente der Liste ermitteln
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_assoziatives_array">5.2. Assoziatives Array</h3>
+<div class="paragraph"><p>wie eine Liste, jedoch mit String als Index anstatt von Integerwerten.
+In anderen Programmiersprachen bekannt als Hashtabelle.</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt># Definition
+set adresse(name) "Willi Weber"
+set adresse(strasse) "Elbchaussee 4"
+set adresse(ort) "Hamburg Altona"
+set adresse(plz) 22765
+
+# Auswahl
+puts $adresse(name)
+puts $adresse(strasse)
+puts $adresse(ort)
+puts $adresse(plz)</tt></pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schleifen">6. Schleifen</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>for</tt>-Schleife
+</p>
+</li>
+<li>
+<p>
+<tt>foreach</tt>-Schleife
+</p>
+</li>
+<li>
+<p>
+<tt>while</tt>-Schleife
+</p>
+</li>
+<li>
+<p>
+Verwendung von <tt>break</tt> und <tt>continue</tt>
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_entwicklung_eigener_funktionen">7. Entwicklung eigener Funktionen</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>TBD</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_weiterführende_dokumente">8. Weiterführende Dokumente</h2>
 <div class="sectionbody">
 <div class="ulist"><ul>
 <li>
@@ -1402,7 +1510,7 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br />
-Letzte Änderung 2015-06-03 18:18:37 CEST
+Letzte Änderung 2015-06-03 18:43:53 CEST
 </div>
 </div>
 </body>
