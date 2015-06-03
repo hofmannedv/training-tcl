@@ -402,10 +402,33 @@ while {$i < 10} {
 ----
 
 * Verwendung von +break+ und +continue+
+** +break+ beendet die gesamte Schleife (bricht deren Ausführung ab)
+** +continue+ beendet nur den aktuellen Schleifendurchlauf und setzt mit
+dem nächsten Schleifendurchlauf fort
 
 == Entwicklung eigener Funktionen ==
 
-TBD
+* eigene Funktionsblöcke
+* benannt mit einem Funktionsnamen (Bezeichner)
+* Parameterliste ist optional
+
+----
+proc total {operand1 operand2} {
+	# calculate a sum of two operands
+	set c [expr $operand1 + $operand2]
+	return $c
+}
+----
+
+* Möglichkeit für Defaultwerte
+
+----
+proc total {{operand1 0} {operand2 0}} {
+	# calculate a sum of two operands
+	set c [expr $operand1 + $operand2]
+	return $c
+}
+----
 
 == Weiterführende Dokumente ==
 

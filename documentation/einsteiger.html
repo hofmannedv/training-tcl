@@ -1513,6 +1513,19 @@ while {$i &lt; 10} {
 <p>
 Verwendung von <tt>break</tt> und <tt>continue</tt>
 </p>
+<div class="ulist"><ul>
+<li>
+<p>
+<tt>break</tt> beendet die gesamte Schleife (bricht deren Ausführung ab)
+</p>
+</li>
+<li>
+<p>
+<tt>continue</tt> beendet nur den aktuellen Schleifendurchlauf und setzt mit
+dem nächsten Schleifendurchlauf fort
+</p>
+</li>
+</ul></div>
 </li>
 </ul></div>
 </div>
@@ -1520,7 +1533,46 @@ Verwendung von <tt>break</tt> und <tt>continue</tt>
 <div class="sect1">
 <h2 id="_entwicklung_eigener_funktionen">7. Entwicklung eigener Funktionen</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>TBD</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+eigene Funktionsblöcke
+</p>
+</li>
+<li>
+<p>
+benannt mit einem Funktionsnamen (Bezeichner)
+</p>
+</li>
+<li>
+<p>
+Parameterliste ist optional
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>proc total {operand1 operand2} {
+        # calculate a sum of two operands
+        set c [expr $operand1 + $operand2]
+        return $c
+}</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Möglichkeit für Defaultwerte
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>proc total {{operand1 0} {operand2 0}} {
+        # calculate a sum of two operands
+        set c [expr $operand1 + $operand2]
+        return $c
+}</tt></pre>
+</div></div>
 </div>
 </div>
 <div class="sect1">
@@ -1570,7 +1622,7 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br />
-Letzte Änderung 2015-06-03 22:41:42 CEST
+Letzte Änderung 2015-06-03 22:56:12 CEST
 </div>
 </div>
 </body>
