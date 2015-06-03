@@ -20,6 +20,7 @@ proc accept {channel address port} {
 
 	# send answer
 	puts $channel $answer
+	puts "(server) sent data: $answer"
 
 	# close channel
 	close $channel
