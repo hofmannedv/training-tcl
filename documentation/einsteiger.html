@@ -1201,15 +1201,10 @@ eine Interpretersprache (tclsh, wish)
 </li>
 <li>
 <p>
-Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
+vereinfachte Vearbeitung von Listen und Arrays mit vielfältigen
+Funktionen
 </p>
 </li>
-</ul></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>Kommando Parameter Parameter ...</tt></pre>
-</div></div>
-<div class="ulist"><ul>
 <li>
 <p>
 alles ist ein String und wird je nach Kontext interpretiert und
@@ -1223,13 +1218,101 @@ alle Datentypen können als String bearbeitet werden
 </li>
 <li>
 <p>
-gilt auch für Verarbeitung des Programmcodes (nützlich zur
-Evaluierungvon Programmcode zur Laufzeit)
+gilt auch für die Verarbeitung des Programmcodes (nützlich zur
+Evaluierung von Programmcode zur Laufzeit)
 </p>
 </li>
 </ul></div>
 </li>
 </ul></div>
+</div>
+<div class="sect2">
+<h3 id="_schreibweise">3.4. Schreibweise</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Kommando Parameter Parameter ...</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Deklaration von Variablen über <tt>set</tt> ohne Typangabe
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>set radius 45</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Zugriff auf Variablen über <tt>$name</tt>
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>puts $radius</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Zeichenketten stehen in doppelten Anführungszeichen
+</p>
+</li>
+<li>
+<p>
+ein Kommando endet entweder mit einem Semikolon oder einem Zeilenende
+</p>
+</li>
+<li>
+<p>
+steht ein Backslash am Zeilende, wird das Kommando auf der nächsten
+Zeile fortgesetzt
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>set message [ command -option1 45 \
+-option2 60 -option3 95 ]</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+geschweifte Klammern schützen den Inhalt vor der Interpretation (von
+außen nach innen)
+</p>
+</li>
+<li>
+<p>
+Code in eckigen Klammern wird zuerst ausgeführt
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Auswertung von innen nach außen
+</p>
+</li>
+<li>
+<p>
+darf mehrfach geschachtelt werden
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>puts [ gets filepointer ]</tt></pre>
+</div></div>
 </div>
 </div>
 </div>
@@ -1280,7 +1363,7 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br />
-Letzte Änderung 2015-06-03 17:52:42 CEST
+Letzte Änderung 2015-06-03 18:06:07 CEST
 </div>
 </div>
 </body>
