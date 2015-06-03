@@ -739,8 +739,8 @@ asciidoc.install(3);
 <div id="header">
 <h1>Programmieren mit Tcl. Erste Schritte.</h1>
 <span id="author">Frank Hofmann</span><br />
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">31. Mai 2015</span>
+<span id="revnumber">version 1.1,</span>
+<span id="revdate">3. Juni 2015</span>
 <div id="toc">
   <div id="toctitle">Inhaltsverzeichnis</div>
   <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
@@ -1082,6 +1082,11 @@ speichern als Textdatei
 Name und Erweiterung sind vollkommen unerheblich
 </p>
 </li>
+<li>
+<p>
+hier verwendete Schreibweise: <tt>datei.tcl</tt>
+</p>
+</li>
 </ul></div>
 <div class="listingblock">
 <div class="content">
@@ -1119,9 +1124,113 @@ Ausführung über die Shell:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_programmaufbau_und_struktur">3. Programmaufbau und Struktur</h2>
+<h2 id="_name_historie_programmaufbau_und_struktur">3. Name, Historie, Programmaufbau und Struktur</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>TBD</p></div>
+<div class="sect2">
+<h3 id="_name">3.1. Name</h3>
+<div class="ulist"><ul>
+<li>
+<p>
+Tcl ist eine Abkürzung und steht für Tool Command Language.
+</p>
+</li>
+<li>
+<p>
+Tk ist ebenfalls eine Abkürzung und steht für Toolkit.
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Programmierung graphischer Benutzeroberflächen
+</p>
+</li>
+<li>
+<p>
+plattformübergreifend verfügbar (soweit graphische Benutzeroberfläche
+vorhanden)
+</p>
+</li>
+<li>
+<p>
+Anbindung u.a. zu Perl (Perl/Tk), Python (Python/Tk) und Ruby
+</p>
+</li>
+<li>
+<p>
+verleiht den Programmen ein eigenes, unverwechselbares Aussehen
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_historie">3.2. Historie</h3>
+<div class="paragraph"><p>Tcl ist entstanden etwa 1988 mit den Zielen:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Simulation von Schaltkreisen
+</p>
+</li>
+<li>
+<p>
+sollte neben Java eine der Websprachen werden
+</p>
+</li>
+</ul></div>
+</div>
+<div class="sect2">
+<h3 id="_grundgedanken">3.3. Grundgedanken</h3>
+<div class="paragraph"><p>Tcl folgt diesen Grundgedanken:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+eine Skriptsprache wie bash, Perl, Python und PHP
+</p>
+</li>
+<li>
+<p>
+Übersetzung zur Ausführung/Laufzeit
+</p>
+</li>
+<li>
+<p>
+eine Interpretersprache (tclsh, wish)
+</p>
+</li>
+<li>
+<p>
+Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>Kommando Parameter Parameter ...</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+alles ist ein String und wird je nach Kontext interpretiert und
+umgewandelt
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+alle Datentypen können als String bearbeitet werden
+</p>
+</li>
+<li>
+<p>
+gilt auch für Verarbeitung des Programmcodes (nützlich zur
+Evaluierungvon Programmcode zur Laufzeit)
+</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1154,6 +1263,12 @@ Das Wikibook to Tcl, <a href="http://en.wikibooks.org/wiki/Tcl_Programming">http
 </li>
 <li>
 <p>
+Uwe Berger: Client/Server mit Tcl, Workshop im Rahmen der Chemnitzer
+Linux-Tage, 2010, <a href="http://www.bralug.de/wiki/BraLUG_auf_dem_CLT2010">http://www.bralug.de/wiki/BraLUG_auf_dem_CLT2010</a>
+</p>
+</li>
+<li>
+<p>
 Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://github.com/hofmannedv/training-tcl">https://github.com/hofmannedv/training-tcl</a>
 </p>
 </li>
@@ -1164,8 +1279,8 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br />
-Letzte Änderung 2015-05-31 15:38:20 CEST
+Version 1.1<br />
+Letzte Änderung 2015-06-03 17:52:42 CEST
 </div>
 </div>
 </body>
