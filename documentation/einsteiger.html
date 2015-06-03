@@ -1242,33 +1242,6 @@ Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
 <div class="ulist"><ul>
 <li>
 <p>
-Deklaration von Variablen über <tt>set</tt> ohne Typangabe
-</p>
-</li>
-</ul></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>set radius 45</tt></pre>
-</div></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Zugriff auf Variablen über <tt>$name</tt>
-</p>
-</li>
-</ul></div>
-<div class="listingblock">
-<div class="content">
-<pre><tt>puts $radius</tt></pre>
-</div></div>
-<div class="ulist"><ul>
-<li>
-<p>
-Zeichenketten stehen in doppelten Anführungszeichen
-</p>
-</li>
-<li>
-<p>
 ein Kommando endet entweder mit einem Semikolon oder einem Zeilenende
 </p>
 </li>
@@ -1313,11 +1286,77 @@ darf mehrfach geschachtelt werden
 <div class="content">
 <pre><tt>puts [ gets filepointer ]</tt></pre>
 </div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Kommentare beginnen mit einem Hashtag <tt>#</tt>
+</p>
+</li>
+</ul></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_weiterführende_dokumente">4. Weiterführende Dokumente</h2>
+<h2 id="_variablen_und_bezeichner">4. Variablen und Bezeichner</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+Deklaration von Variablen über <tt>set</tt> ohne Typangabe (dynamische
+Typisierung)
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>set radius 45
+set tax19 1.19
+set tax7 1.07</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Zugriff auf Variablen über <tt>$Variablenname</tt>
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>puts $radius</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+als Bezeichner sind Buchstaben, Ziffern und Sonderzeichen wie _ erlaubt
+</p>
+</li>
+<li>
+<p>
+Variablen sind nur lokal gültig
+</p>
+<div class="ulist"><ul>
+<li>
+<p>
+Gültigkeitsbereich muß jeweils explizit erweitert werden
+</p>
+</li>
+<li>
+<p>
+Kommandos: <tt>global</tt>, <tt>upvar</tt>, <tt>uplevel</tt>
+</p>
+</li>
+</ul></div>
+</li>
+<li>
+<p>
+Zeichenketten stehen in doppelten Anführungszeichen
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_weiterführende_dokumente">5. Weiterführende Dokumente</h2>
 <div class="sectionbody">
 <div class="ulist"><ul>
 <li>
@@ -1363,7 +1402,7 @@ Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, <a href="https://githu
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br />
-Letzte Änderung 2015-06-03 18:06:07 CEST
+Letzte Änderung 2015-06-03 18:18:37 CEST
 </div>
 </div>
 </body>
