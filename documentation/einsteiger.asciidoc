@@ -351,10 +351,30 @@ puts $adresse(ort)
 puts $adresse(plz)
 ----
 
+Arrayfunktionen (Auswahl):
+
+* +get+:
+* +names+:
+* +size+:
+
 == Schleifen ==
 
 * +for+-Schleife
 * +foreach+-Schleife
+
+----
+# Definition
+set address(name) "Willi Weber"
+set address(road) "Elbchaussee 4"
+set address(place) "Hamburg Altona"
+set address(zip) 22765
+
+# Auswahl Feld für Feld
+foreach item [array names address ] { \
+	puts "${item}: $address($item)" \
+}
+----
+
 * +while+-Schleife
 * Verwendung von +break+ und +continue+
 
