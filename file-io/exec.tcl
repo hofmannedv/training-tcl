@@ -17,5 +17,5 @@ set option "-a"
 # do an external call
 set output [ exec $command $option ]
 
-# display output
+# display output, only
 puts $output
