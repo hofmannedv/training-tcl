@@ -353,9 +353,10 @@ puts $adresse(plz)
 
 Arrayfunktionen (Auswahl):
 
-* +get+:
-* +names+:
-* +size+:
+* +get+: Rückgabe einer Liste, die zwischen dem Index und dem Feldwert
+wechselt
+* +names+: Rückgabe aller Indizes, die in dem Array definiert sind
+* +size+: die Anzahl Elemente in dem Array
 
 == Schleifen ==
 
