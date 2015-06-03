@@ -248,20 +248,68 @@ Tcl folgt diesen Grundgedanken:
 * eine Skriptsprache wie bash, Perl, Python und PHP 
 * Übersetzung zur Ausführung/Laufzeit
 * eine Interpretersprache (tclsh, wish)
-* Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
-
-----
-Kommando Parameter Parameter ...
-----
-
+* vereinfachte Vearbeitung von Listen und Arrays mit vielfältigen
+Funktionen
 * alles ist ein String und wird je nach Kontext interpretiert und
 umgewandelt
 ** alle Datentypen können als String bearbeitet werden
 ** gilt auch für die Verarbeitung des Programmcodes (nützlich zur
 Evaluierung von Programmcode zur Laufzeit)
 
-* vereinfachte Vearbeitung von Listen und Arrays mit vielfältigen
-Funktionen
+
+=== Schreibweise ===
+
+* Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
+
+----
+Kommando Parameter Parameter ...
+----
+
+* ein Kommando endet entweder mit einem Semikolon oder einem Zeilenende
+* steht ein Backslash am Zeilende, wird das Kommando auf der nächsten
+Zeile fortgesetzt
+
+----
+set message [ command -option1 45 \
+-option2 60 -option3 95 ] 
+----
+
+* geschweifte Klammern schützen den Inhalt vor der Interpretation (von
+außen nach innen)
+
+* Code in eckigen Klammern wird zuerst ausgeführt
+** Auswertung von innen nach außen
+** darf mehrfach geschachtelt werden
+
+----
+puts [ gets filepointer ]
+----
+
+* Kommentare beginnen mit einem Hashtag +#+
+
+== Variablen und Bezeichner ==
+ 
+* Deklaration von Variablen über +set+ ohne Typangabe (dynamische
+Typisierung)
+
+----
+set radius 45
+set tax19 1.19
+set tax7 1.07
+----
+
+* Zugriff auf Variablen über +$Variablenname+
+
+----
+puts $radius
+----
+
+* als Bezeichner sind Buchstaben, Ziffern und Sonderzeichen wie _ erlaubt 
+* Variablen sind nur lokal gültig
+** Gültigkeitsbereich muß jeweils explizit erweitert werden
+** Kommandos: +global+, +upvar+, +uplevel+
+
+* Zeichenketten stehen in doppelten Anführungszeichen
 
 == Weiterführende Dokumente ==
 
