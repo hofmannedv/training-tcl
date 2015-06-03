@@ -361,6 +361,14 @@ wechselt
 == Schleifen ==
 
 * +for+-Schleife
+
+----
+# define a for loop from 1 to 10 step 3
+for {set i 1} {$i <= 10} {incr i 3} {
+	puts "value: $i"
+}
+----
+
 * +foreach+-Schleife
 
 ----
@@ -377,6 +385,22 @@ foreach item [array names address ] { \
 ----
 
 * +while+-Schleife
+
+----
+set i 0
+
+while {$i < 10} {
+
+	# output odd values, only
+	if {$i % 2 == 1} {
+		puts $i
+	}
+
+	# increase counter
+	incr i
+}
+----
+
 * Verwendung von +break+ und +continue+
 
 == Entwicklung eigener Funktionen ==
