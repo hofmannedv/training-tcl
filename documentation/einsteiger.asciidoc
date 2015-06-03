@@ -222,9 +222,46 @@ chmod +x hello-world.tcl
 ./hello-world.tcl
 ----
 
-== Programmaufbau und Struktur ==
+== Name, Historie, Programmaufbau und Struktur ==
 
-TBD
+=== Name ===
+
+* Tcl ist eine Abkürzung und steht für Tool Command Language. 
+* Tk ist ebenfalls eine Abkürzung und steht für Toolkit.
+** Programmierung graphischer Benutzeroberflächen
+** plattformübergreifend verfügbar (soweit graphische Benutzeroberfläche
+vorhanden)
+** Anbindung u.a. zu Perl (Perl/Tk), Python (Python/Tk) und Ruby
+** verleiht den Programmen ein eigenes, unverwechselbares Aussehen
+
+=== Historie ===
+
+Tcl ist entstanden etwa 1988 mit den Zielen:
+
+* Simulation von Schaltkreisen
+* sollte neben Java eine der Websprachen werden
+
+=== Grundgedanken ===
+
+Tcl folgt diesen Grundgedanken:
+
+* eine Skriptsprache wie bash, Perl, Python und PHP 
+* Übersetzung zur Ausführung/Laufzeit
+* eine Interpretersprache (tclsh, wish)
+* Schreibweise aller Aufrufe erfolgt durchgängig in polnischer Notation
+
+----
+Kommando Parameter Parameter ...
+----
+
+* alles ist ein String und wird je nach Kontext interpretiert und
+umgewandelt
+** alle Datentypen können als String bearbeitet werden
+** gilt auch für die Verarbeitung des Programmcodes (nützlich zur
+Evaluierung von Programmcode zur Laufzeit)
+
+* vereinfachte Vearbeitung von Listen und Arrays mit vielfältigen
+Funktionen
 
 == Weiterführende Dokumente ==
 
