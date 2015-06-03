@@ -311,6 +311,57 @@ puts $radius
 
 * Zeichenketten stehen in doppelten Anführungszeichen
 
+== Listen und Arrays ==
+
+=== Liste ===
+
+Menge von Werten beliebigen Inhalts und Typs, Indexierung beginnt mit 0
+
+----
+set cities "Lyon Metz Nancy Belfort Pontarlier"
+----
+
+Listenfunktionen (Auswahl):
+
+* +lappend+: ein Element ans Ende der Liste anfügen
+* +lreplace+: ein oder mehrere Listenelemente ersetzen
+* +lsearch+: innerhalb der Liste suchen
+* +linsert+: ein Element in der Liste einfügen
+* +concat+: zwei oder mehrere Listen verketten
+* +lindex+: ein Element anhand dessen Index auswählen
+* +lrange+: einen Bereich der Liste auswählen
+* +llength+: die Anzahl Elemente der Liste ermitteln
+
+=== Assoziatives Array === 
+
+wie eine Liste, jedoch mit String als Index anstatt von Integerwerten.
+In anderen Programmiersprachen bekannt als Hashtabelle.
+
+----
+# Definition
+set adresse(name) "Willi Weber"
+set adresse(strasse) "Elbchaussee 4"
+set adresse(ort) "Hamburg Altona"
+set adresse(plz) 22765
+
+# Auswahl
+puts $adresse(name)
+puts $adresse(strasse)
+puts $adresse(ort)
+puts $adresse(plz)
+----
+
+== Schleifen ==
+
+* +for+-Schleife
+* +foreach+-Schleife
+* +while+-Schleife
+* Verwendung von +break+ und +continue+
+
+== Entwicklung eigener Funktionen ==
+
+TBD
+
 == Weiterführende Dokumente ==
 
 * John Ousterhout: Tcl und Tk. Entwicklung grafischer
