@@ -4,11 +4,11 @@ Frank Hofmann
 :subtitle:
 :doctype: book
 :copyright: Frank Hofmann
-:revnumber: 1.0
+:revnumber: 1.1
 :Author Initials: FH
 :edition: 1
 :lang: de
-:date: 31. Mai 2015
+:date: 3. Juni 2015
 :numbered:
 
 = Vorwort =
@@ -197,6 +197,7 @@ image::helloworld-wish.png[id="fig.helloworld-wish"]
 
 * speichern als Textdatei
 * Name und Erweiterung sind vollkommen unerheblich
+* hier verwendete Schreibweise: +datei.tcl+
 
 ----
 #! /usr/bin/wish
@@ -235,4 +236,6 @@ Hall, München, ISBN 3-8272-9529-7
 * Ulrich Cuber: Linux Scripting, 2001, Franzis' Verlag GmbH, Poing, ISBN
 3-7723-7124-8
 * Das Wikibook to Tcl, http://en.wikibooks.org/wiki/Tcl_Programming
+* Uwe Berger: Client/Server mit Tcl, Workshop im Rahmen der Chemnitzer
+Linux-Tage, 2010, bralug.de/wiki/BraLUG_auf_dem_CLT2010
 * Frank Hofmann: GitHub-Repo mit ausführlichen Beispielen, https://github.com/hofmannedv/training-tcl
