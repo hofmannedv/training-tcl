@@ -23,9 +23,8 @@ puts "length: ${length}"
 # output as string
 puts [ format "%s" $colour ]
 
-# output as string, and value
-puts [ format "colour %s size %d" $colour $size ]
-
+# output as string, and valueputs [ format "colour %s size %d" $colour $size ]
+puts [ format "colour %s size %f" $colour $size ]
 # output as signed integer
 puts [ format "%d" $size ]
 
