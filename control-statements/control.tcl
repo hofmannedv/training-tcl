@@ -23,8 +23,11 @@ if {$value < 45} {
 set pattern Hamburg
 
 switch -exact -- $pattern {
+	# kommentar
 	Hamburg { set value 50 }
+	# kommentar
 	Berlin { set value 60 }
+	# kommentar
 	Dresden { set value 80 }
 }
 
