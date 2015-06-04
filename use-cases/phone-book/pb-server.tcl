@@ -34,12 +34,66 @@ proc accept {channel address port} {
 	return
 }
 
-proc evaluateCommand {command} {
-	return 1
+proc evaluateCommand {request} {
+
+	# set default value: 0 for invalid command
+	set result 0
+
+	# split request into command and option
+	set command [ lindex $request 0 ]
+	set option [ lindex $request 1 ]
+
+	# define valid commands
+	set validCommands "getNumber getList"
+
+	foreach value $validCommands {
+		if [ string match $value $command ] {
+			set result 1
+			# we found a valid command, and can exit the loop
+			break
+		}
+	}
+
+	# return evaluation result
+	return $result
 }
 
-proc executeCommand {command} {
-	return 1
+proc executeCommand {request} {
+	# split request into command and option
+	set command [ lindex $request 0 ]
+	set option [ lindex $request 1 ]
+
+	# define static phone book entries
+	set phoneBook "{{Wilhelm Oelgemöller} 3345} {{Dr. Walter Broermeyer} 1655} {{Gustav Gnöttgen} 3367}"
+
+	# define default value
+	set data ""
+
+	# evaluate command, and option
+	switch -exact $command {
+		getNumber {
+			foreach entry $phoneBook {
+				set name [ lindex $entry 0 ]
+				set number [ lindex $entry 1 ]
+
+				puts "$name : $number ($option)"
+
+				if {[ string match $name $option ]} {
+					set data $number
+					break
+				}
+			}
+		}
+
+		getList { 
+			foreach entry $phoneBook {
+				set name [ lindex $entry 0 ]
+				lappend data $name
+			}
+		}
+	}
+
+	return $data
 }
 
 # -- main program -------------------------------------------
@@ -55,3 +109,4 @@ puts "(phone book server) started listening for requests on port $port"
 
 # initiate event loop to accept and process connections
 vwait forever
+
