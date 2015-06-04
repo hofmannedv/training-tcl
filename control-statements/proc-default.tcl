@@ -21,6 +21,9 @@ total 15 45
 # - with a single parameter, 2nd para has default value
 total 26
 
+# - with a single parameter, 1st para is empty
+total {} 26
+
 # - without parameters, both of them are set to default values
 total
 
