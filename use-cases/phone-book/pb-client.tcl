@@ -8,6 +8,26 @@
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
 
+proc sendRequest { hostname port request } {
+	# initiate connection to server via socket
+	set channel [ socket $hostname $port ]
+
+	# send data via socket
+	puts $channel $request
+	flush $channel
+	puts "(client) sent to server: $request"
+
+	# receive answer message, and output answer
+	set answer [ gets $channel ]
+	puts "(client) received from server: $answer"
+
+	# close channel
+	close $channel
+
+	# return answer
+	return $answer
+}
+
 # define host
 set hostname localhost
 
@@ -18,32 +38,56 @@ set port 34567
 set request1 "getList"
 set request2 "getNumber {Gustav Gnöttgen}"
 
-# initiate connection to server via socket
-set channel [ socket $hostname $port ]
+set answer [ sendRequest $hostname $port $request1 ]
 
-# send data via socket
-puts $channel $request1
-flush $channel
-puts "(client) sent to server: $request1"
+# add listbox to display the phonebook
+listbox .phoneBook -relief raised -borderwidth 2 -yscrollcommand ".scroll set"
+pack .phoneBook -side left
 
-# receive answer message, and output answer
-set answer [ gets $channel ]
-puts "(client) received from server: $answer"
+# ... with scrollbar
+scrollbar .scroll -command ".phoneBook yview"
+pack .scroll -side right -fill y
 
-# close channel
-close $channel
+# ... and quit button
+button .quit -text "Quit"  -command exit
+pack .quit -side bottom
 
-# initiate connection to server via socket
-set channel [ socket $hostname $port ]
+# examine answer. and fill the listbox
+foreach entry $answer {
+	.phoneBook insert end $entry
+}
 
-# send data via socket
-puts $channel $request2
-flush $channel
-puts "(client) sent to server: $request2"
+# ... add message box
+message .msg -justify center -text "No entry selected"
+pack .msg
 
-# receive answer message, and output answer
-set answer [ gets $channel ]
-puts "(client) received from server: $answer"
+# bind keys: left mouse button
+bind .phoneBook <Double-Button-1> {
+	set selectedEntry [ selection get ]
+	puts "selected value: $selectedEntry"
 
-# close channel
-close $channel
+	set request [ list "getNumber" $selectedEntry ]
+
+	set answer [ sendRequest $hostname $port $request ]
+
+	# define result window with push button
+
+	.msg config -justify center -text "$selectedEntry has the phone
+number $answer"
+}
+
+# bind keys: return
+bind .phoneBook <Return> {
+	set selectedEntry [ selection get ]
+	puts "selected value: $selectedEntry"
+
+	set request [ list "getNumber" $selectedEntry ]
+
+	set answer [ sendRequest $hostname $port $request ]
+
+	# define result window with push button
+
+	.msg config -justify center -text "$selectedEntry has the phone
+number $answer"
+}
+
