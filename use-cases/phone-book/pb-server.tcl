@@ -67,7 +67,7 @@ proc executeCommand {request} {
 	set phoneBook "{{Wilhelm Oelgemöller} 3345} {{Dr. Walter Broermeyer} 1655} {{Gustav Gnöttgen} 3367}"
 
 	# define default value
-	set data ""
+	set data "no entry"
 
 	# evaluate command, and option
 	switch -exact $command {
@@ -76,16 +76,18 @@ proc executeCommand {request} {
 				set name [ lindex $entry 0 ]
 				set number [ lindex $entry 1 ]
 
-				puts "$name : $number ($option)"
+				# puts "$name : $number ($option)"
 
 				if {[ string match $name $option ]} {
 					set data $number
 					break
-				}
+				} 
+					
 			}
 		}
 
 		getList { 
+			set data ""
 			foreach entry $phoneBook {
 				set name [ lindex $entry 0 ]
 				lappend data $name
