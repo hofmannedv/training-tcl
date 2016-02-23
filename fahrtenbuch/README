@@ -21,3 +21,4 @@ As a result, the total distance is printed. The following versions are
 included:
 
 * distanz.tcl: original version
+* distanz.ub-fho.tcl: improved version by Uwe Berger and Frank Hofmann
