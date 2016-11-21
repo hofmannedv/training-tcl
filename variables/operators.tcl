@@ -22,7 +22,7 @@ set product [ expr $v1 * $v2 ]
 set division [ expr $v2 / $v1 ]
 
 # modulo division
-set modulo [ expr $v2 / $v1 ]
+set modulo [ expr $v2 % $v1 ]
 
 # shift right
 set shiftRight [ expr $v1 >> 1 ]
