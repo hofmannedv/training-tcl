@@ -8,9 +8,12 @@
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
 
-# define a list of cities
+# define a list of cities as string
 set cities "Lyon Metz Nancy Belfort Pontarlier"
+# define a list of postcodes, explicitly
+set postcode [ list 12345 56789 26789 67100 68000 ]
 puts $cities
+puts $postcode
 
 # add another place (at the end)
 lappend cities "Dijon"
@@ -23,6 +26,9 @@ puts $cities
 # replace element 2 to 4 by a single value
 set cities [ lreplace $cities 1 3 "Nantes" ]
 puts $cities
+
+set postcode  [ lreplace $postcode 1 1 14467 ]
+puts $postcode
 
 # remove item by index -- replace 3rd item by nothing
 set cities [ lreplace $cities 2 2 ]
@@ -42,6 +48,10 @@ puts $cities2
 
 # insert item at position 1
 set cities2 [ linsert $cities2 1 "Mulhouse" ]
+puts $cities2
+
+# insert one item with space at position 2 
+set cities2 [ linsert $cities2 2 "Reims Marseille" ]
 puts $cities2
 
 # insert item at the end (index greater list length
