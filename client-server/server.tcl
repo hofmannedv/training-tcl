@@ -3,7 +3,7 @@
 # -----------------------------------------------------------
 # demonstrates client-server communication (server side)
 #o
-# (C) 2015 Frank Hofmann, Berlin, Germany
+# (C) 2015-16 Frank Hofmann, Berlin, Germany
 # Released under GNU Public License (GPL)
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
@@ -21,9 +21,12 @@ proc accept {channel address port} {
 	# send answer
 	puts $channel $answer
 	puts "(server) sent data: $answer"
+	
+	# clear buffer
+	flush $channel
 
 	# close channel
-	close $channel
+	# close $channel
 }
 
 # define port
