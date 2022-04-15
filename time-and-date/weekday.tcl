@@ -1,9 +1,9 @@
-#! /usr/bin/wish
+#! /usr/bin/tclsh
 
 # -----------------------------------------------------------
 # calculate the day of the week for a given date
 #o
-# (C) 2016 Frank Hofmann, Berlin, Germany
+# (C) 2016-2022 Frank Hofmann, Freiburg, Germany
 # Released under GNU Public License (GPL)
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
