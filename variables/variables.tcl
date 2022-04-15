@@ -1,9 +1,9 @@
-#! /usr/bin/wish
+#! /usr/bin/tclsh
 
 # -----------------------------------------------------------
 # variables
 #o
-# (C) 2015 Frank Hofmann, Berlin, Germany
+# (C) 2015-2022 Frank Hofmann, Freiburg, Germany
 # Released under GNU Public License (GPL)
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
@@ -33,5 +33,4 @@ puts "${messagePart1}Hamburg!"
 
 # - output a special character
 puts \$a
-
 
