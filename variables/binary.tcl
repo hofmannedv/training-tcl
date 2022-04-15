@@ -1,9 +1,9 @@
-#! /usr/bin/wish
+#! /usr/bin/tclsh
 
 # -----------------------------------------------------------
 # output as binary value
 #o
-# (C) 2016 Frank Hofmann, Berlin, Germany
+# (C) 2016-2022 Frank Hofmann, Freiburg, Germany
 # Thanks to Klaus Dierke, Eichwalde, Germany
 # Released under GNU Public License (GPL)
 # email frank.hofmann@efho.de
