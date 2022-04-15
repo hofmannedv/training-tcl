@@ -1,9 +1,9 @@
-#! /usr/bin/wish
+#! /usr/bin/tclsh
 
 # -----------------------------------------------------------
 # variables, assignments, and formatted output
 #o
-# (C) 2015 Frank Hofmann, Berlin, Germany
+# (C) 2015-2022 Frank Hofmann, Freiburg, Germany
 # Released under GNU Public License (GPL)
 # email frank.hofmann@efho.de
 # -----------------------------------------------------------
