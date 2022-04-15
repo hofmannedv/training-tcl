@@ -1,4 +1,41 @@
-count	from				to			distance	reason
-2		Berlin				Potsdam		30			training
-2		Frankfurt (Main)	Paris		575			Linux event
-1		Berlin				Hamburg		280			training
+Anzahl	von				nach				Distanz	Grund
+1	Addis Abeba			Cape Town			6500
+1	Augsburg			Wissembourg			270
+2	Basel				Geneve				245		RHL
+1	Berlin				Augsburg			580		LIT
+4	Berlin				Brandenburg (Havel)	85
+6	Berlin				Chemnitz			265	
+3	Berlin				Dresden				160	
+1	Berlin				Essen				530		CommitterConf
+2	Berlin				Frankfurt (Main)	550
+2	Berlin				Friedrichshafen		750
+4	Berlin				Fürstenwalde		60
+3	Berlin				Konstanz			800
+9	Berlin				Hamburg				280	
+2	Berlin				Paris				1000
+14	Berlin				Potsdam				30		Uni Pdm
+1	Biel				Geneve				160
+1	Brüssel				Paris				300
+2	Cape Town			Hermanus			120
+8	Cape Town			Hout Bay			20
+3	Cape Town			München				12000
+2	Chemnitz			Dresden				70	
+1	Cudrefin			Hamburg				945
+1	Dornbirn			München				200
+1	Essen				Brüssel				240
+3	Frankfurt (Main)	Basel				320	
+3	Geneve				Lausanne			65		Buch
+2	Hamburg				Eindhoven			480
+2	Johannesburg		Cape Town			1400
+1	Konstanz			Biel				185		Cosin
+1	Konstanz			Dornbirn			70		LinuxDays
+2	Lausanne			Berlin				1065	Buch
+1	Lausanne			Zürich				220
+2	München				Berlin				580
+1	Paris				Addis Abeba			8000
+2	Paris				Johannesburg		11000
+1	Schirmeck			Strasbourg			50
+1	Strasbourg			Dresden 			680
+1	Wissembourg			Schirmeck			150
+1	Zürich				Berlin				850
+1	Zürich				Cudrefin			170
