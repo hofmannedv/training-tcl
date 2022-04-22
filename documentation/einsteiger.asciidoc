@@ -197,6 +197,26 @@ Wortes, auch wenn der Wert der Variable Leerzeichen enthält.
 * Bestandteil des Tcl/Tk-Pakets
 * besteht aus Kommandozeilenfenster ('Konsole') und dem graphischen
 Darstellungsfenster ('Display')
+
+==== Interpreter 'tclsh' ====
+
+* Aufruf im Terminal:
+
+----
+$ tclsh
+%
+----
+
+* "Hallo, Welt"-Programm in der +tclsh+
+
+----
+% puts "Hallo, Welt :)"
+Hallo, Welt :)
+%
+----
+
+==== Interpreter mit graphischer Darstellung 'wish' ====
+
 * Aufruf im Terminal:
 
 ----
