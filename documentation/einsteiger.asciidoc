@@ -159,34 +159,36 @@ vier davon ) geben einen hexadezimalen Sechzehn-Bit-Wert für das
 Unicode-Zeichen das eingefügt werden soll.
 |====
 
-Kommentare :: If a hash character (+#+) appears at a point where Tcl is
-expecting the first character of the first word of a command, then the
-hash character and the characters that follow it, up through the next
-newline, are treated as a comment and ignored. The comment character
-only has significance when it appears at the beginning of a command.
+Kommentare :: Wenn ein Hash-Zeichen (+#+) an einer Stelle erscheint, an
+der Tcl das erste Zeichen des ersten Wortes eines Befehls erwartet, dann
+werden das Hash-Zeichen und die darauf folgenden Zeichen bis zum
+nächsten Zeilenumbruch, als Kommentar behandelt und ignoriert. Das
+Kommentarzeichen hat nur Bedeutung, wenn es am Anfang eines Befehls
+steht.
 
-Ersetzungsreihenfolge :: Each character is processed exactly once by the
-Tcl interpreter as part of creating the words of a command. For example,
-if variable substitution occurs then no further substitutions are
-performed on the value of the variable; the value is inserted into the
-word verbatim. If command substitution occurs then the nested command is
-processed entirely by the recursive call to the Tcl interpreter; no
-substitutions are performed before making the recursive call and no
-additional substitutions are performed on the result of the nested
-script. Substitutions take place from left to right, and each
-substitution is evaluated completely before attempting to evaluate the
-next. Thus, a sequence like
+Ersetzungsreihenfolge :: Jedes Zeichen wird genau einmal von dem
+Tcl-Interpreter verarbeitet, um die Wörter eines Befehls zu erzeugen.
+Zum Beispiel, Wenn eine Variablensubstitution stattfindet, werden keine
+weiteren Ersetzungen am Wert der Variable vorgenommen; der Wert wird
+wortwörtlich in das Wort eingefügt. Wenn eine Befehlssubstitution
+stattfindet, wird der verschachtelte Befehl der vollständig durch den
+rekursiven Aufruf des Tcl-Interpreters verarbeitet; es werden keine
+Substitutionen vor dem rekursiven Aufruf durchgeführt und keine keine
+zusätzlichen Ersetzungen am Ergebnis des verschachtelten Skripts
+durchgeführt. Die Substitutionen erfolgen von links nach rechts, und
+jede Substitution wird vollständig ausgewertet, bevor versucht wird, die
+nächsten auszuwerten. So wird eine Sequenz wie
 
 ----
 set y [set x 0][incr x][incr x]
 ----
 
-will always set the variable y to the value, 012.
+stets die Variable `y` auf den Wert `012` setzen.
 
-Ersetzung und Wortgrenzen:: Substitutions do not affect the word
-boundaries of a command. For example, during variable substitution the
-entire value of the variable becomes part of a single word, even if the
-variable's value contains spaces.
+Ersetzung und Wortgrenzen:: Substitutionen haben keinen Einfluss auf die
+Wortgrenzen eines Befehls. Zum Beispiel wird bei einer
+Variablenersetzung der gesamte Wert der Variable Teil eines einzigen
+Wortes, auch wenn der Wert der Variable Leerzeichen enthält.
 
 == Entwicklungsumgebung und Ausführung ==
 
