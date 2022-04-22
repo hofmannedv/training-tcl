@@ -25,19 +25,19 @@ Kommandos :: Ein Tcl-Skript ist eine Zeichenkette, die einen oder
 mehrere Befehle enthält. Semikolons und Zeilenumbrüche sind
 Befehlstrennzeichen, sofern sie nicht wie unten beschrieben in
 Anführungszeichen gesetzt werden. Geschlossene Klammern sind
-Befehlsabschlusszeichen bei der Befehlssubstitution (siehe unten),
-sofern sie nicht in Anführungszeichen stehen.
+Befehlsabschlusszeichen bei der Befehlsersetzung (siehe unten), sofern
+sie nicht in Anführungszeichen stehen.
 
-Bewertung :: Ein Befehl wird in zwei Schritten ausgewertet. Zunächst
-zerlegt der Tcl-Interpreter den Befehl in Wörter und führt
-Substitutionen wie unten beschrieben durch. Diese Substitutionen werden
-für alle Befehle auf die gleiche Weise durchgeführt. Das erste Wort wird
-verwendet, um eine Befehlsprozedur zu finden, die den Befehl ausführt,
-dann werden alle Wörter des Befehls der Befehlsprozedur zugewiesen. Der
-Befehlsprozedur steht es frei, jedes ihrer Wörter auf beliebige Weise zu
-interpretieren, beispielsweise als Ganzzahl, Variablenname, Liste oder
-Tcl-Skript. Verschiedene Befehle interpretieren ihre Wörter
-unterschiedlich.
+Bewertung :: Ein Befehl wird stets in zwei Schritten ausgewertet.
+Zunächst zerlegt der Tcl-Interpreter den Befehl in einzelne Wörter und
+führt Ersetzungen wie unten beschrieben durch. Diese Ersetzungen werden
+für alle Befehle auf die gleiche Art und Weise durchgeführt. Das erste
+Wort wird verwendet, um eine Befehlsprozedur zu finden, die den Befehl
+ausführt, dann werden alle Wörter des Befehls der Befehlsprozedur
+zugewiesen. Der Befehlsprozedur steht es frei, jedes ihrer Wörter auf
+beliebige Weise zu interpretieren, beispielsweise als Ganzzahl,
+Variablenname, Liste oder Tcl-Skript. Verschiedene Befehle
+interpretieren ihre Wörter unterschiedlich.
 
 Worte :: Die Wörter eines Befehls werden durch Leerzeichen getrennt
 (außer bei Zeilenumbrüchen, die Befehlstrennzeichen sind).
@@ -55,30 +55,30 @@ Wortes beibehalten.
 
 Klammern :: Wenn das erste Zeichen eines Wortes eine offene Klammer
 (+{+) ist, dann wird das Wort durch die passende schließende Klammer
-(+}+) abgeschlossen. Klammern verschachteln innerhalb eines Wortes: Für
-jede weitere offene Klammer muss eine eine weitere schließende Klammer
-existieren (wenn jedoch eine offene oder schließende Klammer innerhalb
-Klammer innerhalb des Wortes mit einem umgekehrten Schrägstrich versehen ist,
-wird sie bei der Suche nach der der passenden schließenden Klammer). Für
-die Zeichen zwischen den geschweiften Klammern werden keine Ersetzungen
-vorgenommen. Zeichen zwischen den geschweiften Klammern werden nicht
-ersetzt, mit Ausnahme der nachfolgend beschriebenen Ersetzung von
-Backslash und Kombination aus Zeilenumbruch und Semikolon,
-Zeilenumbruch, geschlossene Klammern oder Leerzeichen/Leerzeichen
-erhalten keine spezielle Interpretation. Das Wort besteht aus genau aus
-den Zeichen zwischen den äußeren geschweiften Klammern, ohne
-Berücksichtigung der Klammern selbst.
+(+}+) abgeschlossen. Klammern lassen sich auch innerhalb eines Wortes
+verschachteln: Für jede weitere offene Klammer muss eine eine weitere
+schließende Klammer existieren. Wenn jedoch eine offene oder schließende
+Klammer innerhalb einer Klammer innerhalb des Wortes mit einem
+umgekehrten Schrägstrich versehen ist, wird sie bei der Suche nach der
+der passenden schließenden Klammer ignoriert). Für die Zeichen zwischen
+den geschweiften Klammern werden keine Ersetzungen vorgenommen. Zeichen
+zwischen den geschweiften Klammern werden nicht ersetzt, mit Ausnahme
+der nachfolgend beschriebenen Ersetzung von Backslash und Kombination
+aus Zeilenumbruch und Semikolon, Zeilenumbruch, geschlossene Klammern
+oder Leerzeichen/Leerzeichen erhalten keine spezielle Interpretation.
+Das Wort besteht aus genau den Zeichen zwischen den äußeren geschweiften
+Klammern ohne Berücksichtigung der Klammern selbst.
 
 Kommandoersetzung :: Wenn ein Wort eine offene Klammer (+[+) enthält,
-führt Tcl eine Befehlssubstitution durch. Dazu ruft es den
-Tcl-Interpreter rekursiv auf, um die auf die offene Klammer folgenden
-Zeichen als Tcl-Skript zu verarbeiten. Das Skript kann eine beliebige
-Anzahl von Befehlen enthalten und muss mit einer schließenden Klammer
-(+]+) abgeschlossen werden.
+führt Tcl eine Kommandoersetzung durch. Dazu ruft es den Tcl-Interpreter
+rekursiv auf, um die auf die offene Klammer folgenden Zeichen als
+Tcl-Skript zu verarbeiten. Das Skript kann eine beliebige Anzahl von
+Befehlen enthalten und muss mit einer schließenden Klammer (+]+)
+abgeschlossen werden.
 +
 Das Ergebnis des Skripts (d. h. das Ergebnis des letzten Befehls) wird
 anstelle der Klammern und aller dazwischen liegenden Zeichen in das Wort
-eingesetzt. Ein einzelnes Wort kann beliebig viele Befehlssubstitutionen
+eingesetzt. Ein einzelnes Wort kann beliebig viele Kommandoersetzungen
 enthalten. In geschweiften Klammern eingeschlossene Wörter werden nicht
 ersetzt.
 
