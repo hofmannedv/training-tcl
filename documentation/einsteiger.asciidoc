@@ -82,51 +82,53 @@ eingesetzt. Ein einzelnes Wort kann beliebig viele Kommandoersetzungen
 enthalten. In geschweiften Klammern eingeschlossene Wörter werden nicht
 ersetzt.
 
-Variablenersetzung :: If a word contains a dollar-sign (+$+) then Tcl
-performs variable substitution: the dollar-sign and the following
-characters are replaced in the word by the value of a variable. Variable
-substitution may take any of the following forms:
+Variablenersetzung :: Wenn ein Wort ein Dollar-Zeichen (+$+) enthält,
+führt Tcl eine Variablensubstitution: das Dollar-Zeichen und die
+folgenden Zeichen werden in dem Wort durch den Wert einer Variablen
+ersetzt. Variable Substitution kann eine der folgenden Formen annehmen:
 
 ----
 $name
 ----
 
-Name is the name of a scalar variable; the name is a sequence of one or
-more characters that are a letter, digit, underscore, or namespace
-separators (two or more colons)-
+Name ist der Name einer skalaren Variablen; der Name ist eine Folge von
+einem oder mehreren Zeichen, die ein Buchstabe, eine Ziffer, ein
+Unterstrich oder ein Namensraumtrennzeichen (zwei oder mehr
+Doppelpunkte) sind.
 
 ----
 $name(index)
 ----
 
-Name gives the name of an array variable and index gives the name of an
-element within that array. Name must contain only letters, digits,
-underscores, and namespace separators, and may be an empty string.
-Command substitutions, variable substitutions, and backslash
-substitutions are performed on the characters of index.
+`name` ist der Name einer Array-Variablen und `index` ist der Name
+eines Elements innerhalb dieses Arrays. Name darf nur Buchstaben,
+Ziffern, Unterstriche und Namespace-Trennzeichen enthalten und kann eine
+leere Zeichenkette sein. Ersetzungen von Befehlen, Variablen und
+Backslashes werden an den Zeichen vor `index` vorgenommen.
 
 ----
 ${name}
 ----
 
-Name is the name of a scalar variable. It may contain any characters
-whatsoever except for close braces. There may be any number of variable
-substitutions in a single word. Variable substitution is not performed
-on words enclosed in braces.
+Name ist der Name einer skalaren Variablen. Dieser kann beliebige
+Zeichen enthalten, mit Ausnahme von geschweiften Klammern. Es kann eine
+beliebige Anzahl von Variablenersetzungen in einem einzigen Wort
+enthalten. Die Variablenersetzung wird nicht durchgeführt bei Wörtern,
+die in geschweiften Klammern stehen.
 
-Backslash-Ersetzung :: If a backslash (+\+) appears within a word
-then backslash substitution occurs. In all cases but those described
-below the backslash is dropped and the following character is treated as
-an ordinary character and included in the word. This allows characters
-such as double quotes, close brackets, and dollar signs to be included
-in words without triggering special processing. The following table
-lists the backslash sequences that are handled specially, along with the
-value that replaces each sequence.
-
+Backslash-Ersetzung :: Wenn ein Backslash (+\+) innerhalb eines Wortes
+erscheint, erfolgt eine Backslash-Ersetzung. In allen Fällen außer den
+unten beschriebenen wird der Backslash weggelassen und das folgende
+Zeichen wird als ein normales Zeichen behandelt und in das Wort
+aufgenommen. Dies erlaubt, dass Zeichen wie doppelte Anführungszeichen,
+geschlossene Klammern und Dollarzeichen in Wörter eingefügt werden,
+ohne eine spezielle Verarbeitung auszulösen. Die nachfolgende Tabelle
+listet die Backslash-Sequenzen auf, die speziell behandelt werden,
+zusammen mit dem Wert, der die einzelnen Sequenzen ersetzt:
 
 [frame="topbot",options="header",id="tab.backslashSubstitution"]
 |====
-| character  | Action
+| Zeichen  | Aktion
 | +\a+ | Audible alert (bell) (0x7).
 | +\b+ | Backspace (0x8).
 | +\f+ | Form feed (0xc).
@@ -134,24 +136,27 @@ value that replaces each sequence.
 | +\r+ | Carriage-return (0xd).
 | +\t+ | Tab (0x9).
 | +\v+ | Vertical tab (0xb).
-| +\<newline>whiteSpace+ | A single space character replaces the
-backslash, newline, and all spaces and tabs after the newline. This
-backslash sequence is unique in that it is replaced in a separate
-pre-pass before the command is actually parsed. This means that it will
-be replaced even when it occurs between braces, and the resulting space
-will be treated as a word separator if it isn't in braces or quotes.
-| +\\+ | Literal backslash (+\+), no special effect.
-| +\ooo+ | The digits ooo (one, two, or three of them) give an eight-bit
-octal value for the Unicode character that will be inserted. The upper
-bits of the Unicode character will be 0.
-| +\xhh+ | The hexadecimal digits +hh+ give an eight-bit hexadecimal
-value for the Unicode character that will be inserted. Any number of
-hexadecimal digits may be present; however, all but the last two are
-ignored (the result is always a one-byte quantity). The upper bits of
-the Unicode character will be 0.
-| +\uhhhh+ | The hexadecimal digits +hhhh+ (one, two, three, or four of
-them) give a sixteen-bit hexadecimal value for the Unicode character
-that will be inserted.
+| +\<newline>whiteSpace+ | Ein einzelnes Leerzeichen ersetzt den
+Backslash, den Zeilenumbruch und alle Leerzeichen und Tabulatoren nach
+dem Zeilenumbruch. Diese Backslash-Sequenz ist einzigartig, da sie in
+einem separaten Vorlauf ersetzt wird, bevor der Befehl tatsächlich
+geparst wird. Das bedeutet, dass sie ersetzt, auch wenn sie zwischen
+geschweiften Klammern steht, und das resultierende Leerzeichen wird wie
+ein Worttrennzeichen behandelt, wenn es nicht in geschweiften Klammern
+oder Anführungszeichen steht.
+| +\\+ | Literal backslash (+\+), Kein besonderer Effekt.
+| +\ooo+ | Die Ziffern ooo (eine, zwei oder drei davon) geben einen
+Acht-Bit Oktalwert für das Unicode-Zeichen, das eingefügt werden soll.
+Die oberen Bits des Unicode-Zeichens sind 0.
+| +\xhh+ | Die hexadezimalen Ziffern +hh+ geben einen
+Acht-Bit-Hexadezimalwert für das einzufügende Unicode-Zeichen an.
+Eine beliebige Anzahl von hexadezimalen Ziffern können vorhanden sein;
+allerdings werden alle bis auf die letzten beiden ignoriert (das
+Ergebnis ist immer eine Ein-Byte-Menge). Die oberen Bits des des
+Unicode-Zeichens sind 0.
+| +\uhhhh+ | Die hexadezimalen Ziffern +hhhh+ (eine, zwei, drei oder
+vier davon ) geben einen hexadezimalen Sechzehn-Bit-Wert für das
+Unicode-Zeichen das eingefügt werden soll.
 |====
 
 Kommentare :: If a hash character (+#+) appears at a point where Tcl is
